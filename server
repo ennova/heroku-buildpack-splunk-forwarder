@@ -78,8 +78,10 @@ class Server
       drain_id = request['Logplex-Drain-Token']
       socket = @splunk_sockets[drain_id] || @splunk_sockets[:default]
 
-      socket.puts(request.body)
-      socket.flush
+      request.body.lines.each do |line|
+        socket.puts(line)
+        socket.flush
+      end
     end
   end
 end
