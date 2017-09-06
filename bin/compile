@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # bin/compile <build-path> <cache-path> <env-path>
 
+echo 'Compiling ennova/heroku-buildpack-splunk-forwarder...'
+
 set -e
 
 indent() {
